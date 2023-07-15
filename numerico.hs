@@ -1,5 +1,5 @@
 module Numerico where 
--- Este un cometario de linea
+
 {-
   Este es un comentario multilínea
 -}
@@ -180,7 +180,7 @@ mapear (x:xs) (y:ys) = [lista] ++ mapear xs ys
                             where lista = producto7 x y
 producto7 [] l2 = []
 producto7 (x:xs) (y:ys) = [x*y]++producto7 xs ys
----------------------
+-----------------
 primero l1 = segundo l1 ((length l1)-1) [1..((length l1))]
 segundo l1 0 i = []
 segundo l1 n (i:is) = [a] ++ segundo l1 (n-1) is
