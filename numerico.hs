@@ -1,8 +1,6 @@
 module Numerico where 
 
-{-
-  Este es un comentario multilínea
--}
+
 -- mostrar una lista de tuplas en columnas
 -- se debe mejorar, vi que si se puede imprimir en un archivo, reconoce a este '\n'
 mostrar :: (Show a, Show b) => [(a, b)] -> String
