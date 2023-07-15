@@ -169,28 +169,7 @@ min_cua l1 l2 =
 -----------------------------------------------------------------------
 -- Interpolación de Newton
 -----------------------------------------------------------------------
-dif [x] = []
-dif (x:y:xs) = [y-x] ++ dif (y:xs)
-newton_dif l1 l2 = newt l2 []
-newt [] r = init r
-newt t@(x:xs) r = newt d (r ++ [d])
-                  where d = dif t
-mapear [] l2 = []
-mapear (x:xs) (y:ys) = [lista] ++ mapear xs ys
-                            where lista = producto7 x y
-producto7 [] l2 = []
-producto7 (x:xs) (y:ys) = [x*y]++producto7 xs ys
----------------------
-primero l1 = segundo l1 ((length l1)-1) [1..((length l1))]
-segundo l1 0 i = []
-segundo l1 n (i:is) = [a] ++ segundo l1 (n-1) is
-                     where a = [(x,x)|(x,y)<-(magia l1 [1..(length l1)]), y `mod` i == 0]
-magia [] n = []
-magia (x:xs) (n:ns) = [(x,n)] ++ magia xs ns
 
--- primero [5,4,3,2] 
---[(5,4)(4,3)(3,2)],[(5,3)(4,2)],[(5,2)]
-----------------------------------------------fin interpolacion de Newton
 
 -----------------------------------------------------------------------
 -- Interpolacion de Lagrange
