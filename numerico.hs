@@ -1,6 +1,8 @@
 module Numerico where 
-
-
+-- Este un cometario de linea
+{-
+  Este es un comentario multilínea
+-}
 -- mostrar una lista de tuplas en columnas
 -- se debe mejorar, vi que si se puede imprimir en un archivo, reconoce a este '\n'
 mostrar :: (Show a, Show b) => [(a, b)] -> String
@@ -178,12 +180,13 @@ mapear (x:xs) (y:ys) = [lista] ++ mapear xs ys
                             where lista = producto7 x y
 producto7 [] l2 = []
 producto7 (x:xs) (y:ys) = [x*y]++producto7 xs ys
------------------
+---------------------
 primero l1 = segundo l1 ((length l1)-1) [1..((length l1))]
 segundo l1 0 i = []
 segundo l1 n (i:is) = [a] ++ segundo l1 (n-1) is
                      where a = [(x,x)|(x,y)<-(magia l1 [1..(length l1)]), y `mod` i == 0]
-
+magia [] n = []
+magia (x:xs) (n:ns) = [(x,n)] ++ magia xs ns
 
 -- primero [5,4,3,2] 
 --[(5,4)(4,3)(3,2)],[(5,3)(4,2)],[(5,2)]
